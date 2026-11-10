@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16475076392"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16475076392');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Received — Leads by Danny</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F0F1EC;
+    --surface: #FBFBF7;
+    --text: #1B211F;
+    --text-muted: #5B5D53;
+    --accent: #C85A2B;
+    --accent-ink: #FFFFFF;
+    --border: #D8D2C4;
+    --border-strong: #B9B29F;
+    --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --font-body: "Work Sans", "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #14181A; --surface: #1A1F21; --text: #ECE8DD; --text-muted: #A6A398;
+      --accent: #E27A45; --accent-ink: #14181A; --border: #33393B; --border-strong: #454C4E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14181A; --surface: #1A1F21; --text: #ECE8DD; --text-muted: #A6A398;
+    --accent: #E27A45; --accent-ink: #14181A; --border: #33393B; --border-strong: #454C4E;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card{
+    max-width: 480px;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 8px 24px -12px rgba(27,33,31,0.18);
+  }
+  .check{
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .check svg{ width: 26px; height: 26px; }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  h1{
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    margin: 0 0 14px;
+  }
+  p{ color: var(--text-muted); margin: 0 0 10px; }
+  .ref{
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-strong);
+  }
+  a{ color: var(--accent); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <p class="eyebrow">Payment Received</p>
+    <h1>You're all set.</h1>
+    <p>Thanks for ordering your website. I've got your payment and your order details — I'll reach out within one business day to get started.</p>
+    <p>Questions in the meantime? Call or text <a href="tel:+19453601274">(945) 360-1274</a>.</p>
+    <p class="ref" id="refLine" style="display:none;">Reference <span id="refCode"></span></p>
+  </div>
+
+  <script>
+    (function(){
+      var ref = null;
+      try { ref = localStorage.getItem('ld_pending_ref'); } catch (e) {}
+      if (ref) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-16475076392/7k_4CNyZ7-UcEKju9q89',
+            'value': 499.0,
+            'currency': 'USD',
+            'transaction_id': ref
+          });
+        }
+        document.getElementById('refCode').textContent = ref;
+        document.getElementById('refLine').style.display = 'block';
+        try { localStorage.removeItem('ld_pending_ref'); } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
